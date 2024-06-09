@@ -1,0 +1,108 @@
+body{
+    margin-left: 15px;
+    background-color: azure;
+}
+
+.todolist{
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#halfline {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+
+.todolist #completed{
+    background-color: rgb(18, 153, 18);
+}
+
+
+h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task{
+    background-color:rgb(226, 194, 151);
+    padding: 0.1px;
+    padding-left: 10px;
+}
+
+.addtask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.status-completed {
+    color: rgb(42, 142, 42);
+    font-weight: 800;
+}
+
+.status-incomplete {
+    color: red;
+    font-weight: 800;
+}
+
+.addtask input{
+    height: 30px;
+    width: 300px;
+}
+
+
+.todolist form{
+    display: inline;
+}
+
+.todolist button{
+    padding: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.todolist button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.delete{
+    display: inline;
+}
+
+.delete button{
+    background-color: red;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.delete button:hover{
+    background-color: rgb(169, 13, 13);
+    transform: scale(1.1);
+}
+
+
+#center {
+    text-align: center;
+}
+
+
+.statusbutton {
+    display: inline;
+    margin-left: 50%;
+}

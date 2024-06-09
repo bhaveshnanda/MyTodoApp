@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center><h1>Todo App</h1></center>
+    <h3>Add Todo</h3>
+    <div class="addtask">
+        <form method="POST" action="/add">
+            <input placeholder="Enter Task" name="task">
+            <input placeholder="Enter Description" name="description">
+            <input type="hidden" name="status" value="Incomplete">
+            <br><br>
+            <button>Add Task</button>
+            <br>
+        </form>
+    </div>
+    <br><br><hr id="halfline">
+    <h2 id="center">My Todos 😁</h2>
+    <% for(data of datas){ %>
+        <div class="todolist">
+        <div class="task"><p>Task: <%= data.task %></p></div>
+        <br>
+        <a>&nbsp; Description: <%= data.description %></a>
+        <br><br>
+        <a>&nbsp;&nbsp;Status: <span class="status <%= data.status === 'Completed🥳' ? 'status-completed' : 'status-incomplete' %>"><%= data.status %></span></a>
+        <br><br>
+        &nbsp;
+        <form method="GET" action="/data/<%= data._id %>/edit">
+            <button>edit🙄</button>
+        </form>
+        &nbsp;
+        <div class="delete">
+        <form method="POST" action="/data/delete/<%= data._id %>?_method=DELETE">
+            <button>Delete✖️</button>
+        </form>
+        </div>
+        <form method="POST" action="/data/status/<%= data._id%>?_method=PUT">
+            <div class="statusbutton">
+            <button style="background-color: rgb(30, 158, 30);" name="newstatus" value="Completed🥳">Completed</button>
+            &nbsp;
+            <button name="newstatus" value="Incomplete🥲">Incomplete</button>
+            </div>
+        </form>
+        </div>
+        <br>
+    <% } %>
+</body>
+</html>
