@@ -1,3 +1,2 @@
-git rm -r --cached node_modules
-git commit -m "Remove node_modules from repository"
-git push origin main
+node_modules/
+**/.DS_Store
